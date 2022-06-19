@@ -79,7 +79,8 @@ router.patch('/:id', async(req,res)=>{
         }
        
         const a1=await stuPatch.save()
-        res.json(a1)
+        let name=a1.name
+        res.send(`Student ${name} is updated succeessfully`)
     }
     catch(err){
 res.send(err)
@@ -100,7 +101,8 @@ router.post('/', async(req,res)=>{
     })
     try{
  const s1=await student1.save()
- res.json(s1)
+ let name=s1.name
+ res.send(`Student ${name} is added to the database`)
     }
     catch(err){
      res.send(err)
